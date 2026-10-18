@@ -33,6 +33,16 @@ picks up:
 import { Frame, Text } from "@unison-components/native"
 ```
 
+#### Styling
+
+The library styles everything with Tailwind class names. [Uniwind](https://uniwind.dev) compiles them to React Native
+styles at build time, using Tailwind 4 like the web playground. `global.css` is its entry point, wired up in
+`metro.config.js`. It imports the library's _tailwind.css_, which carries its colors as Tailwind theme colors and a
+safelist of the class names the library builds at runtime, so there is no build step here. Don't edit
+_uniwind-types.d.ts_ (written by Metro) by hand.
+
+#### Updating
+
 Only move the submodule pointer when intentionally bumping the library:
 
 ```sh

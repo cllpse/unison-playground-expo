@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.expo", "!dist", "!web-build", "!!unison-components"]
+    "includes": ["**", "!node_modules", "!.expo", "!dist", "!web-build", "!!unison-components", "!uniwind-types.d.ts"]
   },
   "formatter": {
     "enabled": true,
