@@ -1,0 +1,19 @@
+# unison-playground-expo
+
+A small Expo app (managed workflow, TypeScript) for trying out the unison-components library on iOS and Android.
+
+## Commands
+
+- `bun install`: bun is the package manager; never add npm/yarn lockfiles
+- `bunx expo install <package>`: add dependencies this way so versions match the Expo SDK
+- `bun start`: Expo dev server
+- `bun run typecheck`: `tsc --noEmit`; must pass before committing
+- `bun run lint`: Biome check; `bunx biome check --write .` formats, lints and organizes imports
+- `bunx expo-doctor`: check dependency and config issues
+
+## Notes
+
+- `unison-components` is a git submodule; never edit it here. Import it as `@unison-components/native`.
+- Expo changes between SDK releases; read the docs for the installed major version
+  (`https://docs.expo.dev/versions/v<major>.0.0/`) rather than relying on memory.
+- `ios/` and `android/` are generated when needed; configure native behavior in `app.json`, never by hand.

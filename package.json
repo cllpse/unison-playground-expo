@@ -1,0 +1,27 @@
+{
+  "name": "unison-playground-expo",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "lint": "biome check",
+    "format": "biome format --write",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "expo": "~58.0.14",
+    "expo-status-bar": "~58.0.3",
+    "react": "19.3.0",
+    "react-native": "0.88.0",
+    "react-native-svg": "15.16.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/react": "~19.3.0",
+    "typescript": "~6.0.3"
+  },
+  "packageManager": "bun@1.4.3"
+}
