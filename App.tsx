@@ -25,7 +25,7 @@ const Section = (p: { title: string; note: string; children?: ReactNode }) => {
       <Text fill-neutral-600 typography-body-small-wrap>
         {p.note}
       </Text>
-      <Frame corner-radius-3 fill-neutralsurface-100 flow-vertical gap-4 height-hug padding-4 width-fill>
+      <Frame corner-radius-xl fill-neutralsurface-100 flow-vertical gap-4 height-hug padding-4 width-fill>
         {p.children}
       </Frame>
     </Frame>
@@ -81,20 +81,23 @@ export default () => {
               <Frame height-12 stroke-neutral-600 stroke-style-dashed width-12 />
             </Case>
             <Case label="1px line">
-              <Frame fill-neutral-700 height-1px width-12 />
+              <Frame fill-neutral-700 height-px width-12 />
             </Case>
           </Frame>
           <Caption>width-fill, height-4</Caption>
           <Frame fill-positive-400 height-4 width-fill />
         </Section>
 
-        <Section title="2. Fixed sizes" note="Squares from width-1 to width-28, bottom aligned in a wrapping row.">
+        <Section title="2. Fixed sizes" note="Squares from width-1 to width-32, bottom aligned in a wrapping row.">
           <Frame alignment-bottom-left flow-horizontal gap-2 height-hug width-fill wrap>
             <Case label="1">
               <Frame fill-primary-700 height-1 width-1 />
             </Case>
             <Case label="2">
               <Frame fill-primary-700 height-2 width-2 />
+            </Case>
+            <Case label="2p5">
+              <Frame fill-primary-700 height-2p5 width-2p5 />
             </Case>
             <Case label="4">
               <Frame fill-primary-700 height-4 width-4 />
@@ -104,6 +107,9 @@ export default () => {
             </Case>
             <Case label="8">
               <Frame fill-primary-700 height-8 width-8 />
+            </Case>
+            <Case label="9">
+              <Frame fill-primary-700 height-9 width-9 />
             </Case>
             <Case label="10">
               <Frame fill-primary-700 height-10 width-10 />
@@ -122,6 +128,9 @@ export default () => {
             </Case>
             <Case label="28">
               <Frame fill-primary-700 height-28 width-28 />
+            </Case>
+            <Case label="32">
+              <Frame fill-primary-700 height-32 width-32 />
             </Case>
             <Case label="28 x 4">
               <Frame fill-secondary-700 height-4 width-28 />
@@ -237,8 +246,8 @@ export default () => {
                 <Frame fill-primary-700 height-8 width-8 />
               </Frame>
             </Case>
-            <Case label="padding-1px">
-              <Frame fill-primary-200 padding-1px>
+            <Case label="padding-px">
+              <Frame fill-primary-200 padding-px>
                 <Frame fill-primary-700 height-8 width-8 />
               </Frame>
             </Case>
@@ -310,8 +319,8 @@ export default () => {
                 <Frame fill-secondary-300 height-6 width-6 />
               </Frame>
             </Case>
-            <Case label="gap-1px">
-              <Frame flow-horizontal gap-1px>
+            <Case label="gap-px">
+              <Frame flow-horizontal gap-px>
                 <Frame fill-secondary-700 height-6 width-6 />
                 <Frame fill-secondary-500 height-6 width-6 />
                 <Frame fill-secondary-300 height-6 width-6 />
@@ -364,44 +373,53 @@ export default () => {
 
         <Section title="8. Corner radius" note="16 x 16 squares with each corner flag.">
           <Frame alignment-top-left flow-horizontal gap-4 height-hug width-fill wrap>
-            <Case label="0">
-              <Frame corner-radius-0 fill-tertiary-500 height-16 width-16 />
+            <Case label="none">
+              <Frame corner-radius-none fill-tertiary-500 height-16 width-16 />
             </Case>
-            <Case label="1">
-              <Frame corner-radius-1 fill-tertiary-500 height-16 width-16 />
+            <Case label="xs">
+              <Frame corner-radius-xs fill-tertiary-500 height-16 width-16 />
             </Case>
-            <Case label="2">
-              <Frame corner-radius-2 fill-tertiary-500 height-16 width-16 />
+            <Case label="sm">
+              <Frame corner-radius-sm fill-tertiary-500 height-16 width-16 />
             </Case>
-            <Case label="4">
-              <Frame corner-radius-4 fill-tertiary-500 height-16 width-16 />
+            <Case label="md">
+              <Frame corner-radius-md fill-tertiary-500 height-16 width-16 />
             </Case>
-            <Case label="8">
-              <Frame corner-radius-8 fill-tertiary-500 height-16 width-16 />
+            <Case label="lg">
+              <Frame corner-radius-lg fill-tertiary-500 height-16 width-16 />
+            </Case>
+            <Case label="xl">
+              <Frame corner-radius-xl fill-tertiary-500 height-16 width-16 />
+            </Case>
+            <Case label="2xl">
+              <Frame corner-radius-2xl fill-tertiary-500 height-16 width-16 />
+            </Case>
+            <Case label="3xl">
+              <Frame corner-radius-3xl fill-tertiary-500 height-16 width-16 />
+            </Case>
+            <Case label="4xl">
+              <Frame corner-radius-4xl fill-tertiary-500 height-16 width-16 />
             </Case>
             <Case label="full">
               <Frame corner-radius-full fill-tertiary-500 height-16 width-16 />
             </Case>
-            <Case label="huge">
-              <Frame corner-radius-huge fill-tertiary-500 height-16 width-16 />
+            <Case label="top-left-3xl">
+              <Frame corner-radius-top-left-3xl fill-tertiary-500 height-16 width-16 />
             </Case>
-            <Case label="top-left-6">
-              <Frame corner-radius-top-left-6 fill-tertiary-500 height-16 width-16 />
+            <Case label="top-right-3xl">
+              <Frame corner-radius-top-right-3xl fill-tertiary-500 height-16 width-16 />
             </Case>
-            <Case label="top-right-6">
-              <Frame corner-radius-top-right-6 fill-tertiary-500 height-16 width-16 />
+            <Case label="bottom-left-3xl">
+              <Frame corner-radius-bottom-left-3xl fill-tertiary-500 height-16 width-16 />
             </Case>
-            <Case label="bottom-left-6">
-              <Frame corner-radius-bottom-left-6 fill-tertiary-500 height-16 width-16 />
-            </Case>
-            <Case label="bottom-right-6">
-              <Frame corner-radius-bottom-right-6 fill-tertiary-500 height-16 width-16 />
+            <Case label="bottom-right-3xl">
+              <Frame corner-radius-bottom-right-3xl fill-tertiary-500 height-16 width-16 />
             </Case>
             <Case label="leaf">
               <Frame corner-radius-bottom-right-full corner-radius-top-left-full fill-tertiary-500 height-16 width-16 />
             </Case>
-            <Case label="border-radius-4">
-              <Frame border-radius-4 fill-tertiary-500 height-16 width-16 />
+            <Case label="border-radius-2xl">
+              <Frame border-radius-2xl fill-tertiary-500 height-16 width-16 />
             </Case>
             <Case label="pill 28 x 8">
               <Frame corner-radius-full fill-tertiary-500 height-8 width-28 />
@@ -462,7 +480,7 @@ export default () => {
               <Frame fill-white height-16 stroke-neutral-600 stroke-style-dashed width-16 />
             </Case>
             <Case label="stroke + round">
-              <Frame corner-radius-4 fill-white height-16 stroke-primary-700 width-16 />
+              <Frame corner-radius-2xl fill-white height-16 stroke-primary-700 width-16 />
             </Case>
             <Case label="stroke + full">
               <Frame corner-radius-full fill-white height-16 stroke-secondary-700 width-16 />
@@ -476,22 +494,43 @@ export default () => {
           </Frame>
         </Section>
 
-        <Section title="10. Shadows" note="Shadows on white and tinted frames.">
+        <Section title="10. Shadows" note="Tinted shadows on white and primary frames, then Tailwind's shadow scale.">
           <Frame alignment-top-left fill-white flow-horizontal gap-6 height-hug padding-4 width-fill wrap>
             <Case label="white none">
-              <Frame corner-radius-2 effect-shadow-none fill-white height-16 width-16 />
+              <Frame corner-radius-lg effect-shadow-none fill-white height-16 width-16 />
             </Case>
             <Case label="white small">
-              <Frame corner-radius-2 effect-shadow-small fill-white height-16 width-16 />
+              <Frame corner-radius-lg effect-shadow-small fill-white height-16 width-16 />
             </Case>
             <Case label="white large">
-              <Frame corner-radius-2 effect-shadow-large fill-white height-16 width-16 />
+              <Frame corner-radius-lg effect-shadow-large fill-white height-16 width-16 />
             </Case>
             <Case label="primary small">
-              <Frame corner-radius-2 effect-shadow-small fill-primary-500 height-16 width-16 />
+              <Frame corner-radius-lg effect-shadow-small fill-primary-500 height-16 width-16 />
             </Case>
             <Case label="primary large">
-              <Frame corner-radius-2 effect-shadow-large fill-primary-500 height-16 width-16 />
+              <Frame corner-radius-lg effect-shadow-large fill-primary-500 height-16 width-16 />
+            </Case>
+            <Case label="2xs">
+              <Frame corner-radius-lg effect-shadow-2xs fill-white height-16 width-16 />
+            </Case>
+            <Case label="xs">
+              <Frame corner-radius-lg effect-shadow-xs fill-white height-16 width-16 />
+            </Case>
+            <Case label="sm">
+              <Frame corner-radius-lg effect-shadow-sm fill-white height-16 width-16 />
+            </Case>
+            <Case label="md">
+              <Frame corner-radius-lg effect-shadow-md fill-white height-16 width-16 />
+            </Case>
+            <Case label="lg">
+              <Frame corner-radius-lg effect-shadow-lg fill-white height-16 width-16 />
+            </Case>
+            <Case label="xl">
+              <Frame corner-radius-lg effect-shadow-xl fill-white height-16 width-16 />
+            </Case>
+            <Case label="2xl">
+              <Frame corner-radius-lg effect-shadow-2xl fill-white height-16 width-16 />
             </Case>
           </Frame>
         </Section>
@@ -1026,7 +1065,7 @@ export default () => {
         </Section>
 
         <Section title="16. Card" note="Text and frames nested into a card with a shadow, tag and buttons.">
-          <Frame corner-radius-4 effect-shadow-large fill-white flow-vertical gap-3 height-hug padding-4 width-fill>
+          <Frame corner-radius-2xl effect-shadow-large fill-white flow-vertical gap-3 height-hug padding-4 width-fill>
             <Frame alignment-left flow-horizontal gap-2 height-hug width-fill>
               <Frame flow-vertical height-hug width-fill>
                 <Text fill-text-800 typography-header-small-wrap>
@@ -1042,7 +1081,7 @@ export default () => {
                 </Text>
               </Frame>
             </Frame>
-            <Frame fill-neutral-300 height-1px width-fill />
+            <Frame fill-neutral-300 height-px width-fill />
             <Text fill-text-800 typography-body-wrap>
               {LOREM}
             </Text>
@@ -1065,7 +1104,7 @@ export default () => {
           title="17. List rows"
           note="Avatar, two lines of text that truncate, and a trailing badge. The middle column fills."
         >
-          <Frame corner-radius-3 fill-white flow-vertical height-hug width-fill>
+          <Frame corner-radius-xl fill-white flow-vertical height-hug width-fill>
             <Frame alignment-left flow-horizontal gap-3 height-hug padding-3 width-fill>
               <Frame alignment-center corner-radius-full fill-primary-200 height-10 width-10>
                 <Text fill-primary-800 typography-label-nowrap>
@@ -1086,7 +1125,7 @@ export default () => {
                 </Text>
               </Frame>
             </Frame>
-            <Frame fill-neutral-200 height-1px width-fill />
+            <Frame fill-neutral-200 height-px width-fill />
             <Frame alignment-left flow-horizontal gap-3 height-hug padding-3 width-fill>
               <Frame alignment-center corner-radius-full fill-secondary-200 height-10 width-10>
                 <Text fill-secondary-800 typography-label-nowrap>
@@ -1107,7 +1146,7 @@ export default () => {
                 </Text>
               </Frame>
             </Frame>
-            <Frame fill-neutral-200 height-1px width-fill />
+            <Frame fill-neutral-200 height-px width-fill />
             <Frame alignment-left flow-horizontal gap-3 height-hug padding-3 width-fill>
               <Frame alignment-center corner-radius-full fill-tertiary-200 height-10 width-10>
                 <Text fill-tertiary-800 typography-label-nowrap>
@@ -1132,11 +1171,11 @@ export default () => {
           title="18. Rows of columns, columns of rows"
           note="An app shell: header, a sidebar beside a 2 x 2 grid of fill cards, and a footer."
         >
-          <Frame corner-radius-3 fill-white flow-vertical height-hug stroke-neutral-300 width-fill>
+          <Frame corner-radius-xl fill-white flow-vertical height-hug stroke-neutral-300 width-fill>
             <Frame
               alignment-left
-              corner-radius-top-left-3
-              corner-radius-top-right-3
+              corner-radius-top-left-xl
+              corner-radius-top-right-xl
               fill-neutral-700
               flow-horizontal
               gap-2
@@ -1144,7 +1183,7 @@ export default () => {
               padding-horizontal-3
               width-fill
             >
-              <Frame corner-radius-1 fill-primary-500 height-6 width-6 />
+              <Frame corner-radius-sm fill-primary-500 height-6 width-6 />
               <Frame flow-vertical width-fill>
                 <Text fill-white typography-label-nowrap>
                   Header
@@ -1154,7 +1193,7 @@ export default () => {
             </Frame>
             <Frame flow-horizontal height-hug width-fill>
               <Frame fill-neutralsurface-100 flow-vertical gap-1 height-fill padding-2 width-24>
-                <Frame corner-radius-1 fill-primary-100 padding-2 width-fill>
+                <Frame corner-radius-sm fill-primary-100 padding-2 width-fill>
                   <Text fill-primary-800 typography-label-small-nowrap>
                     Inbox
                   </Text>
@@ -1172,7 +1211,7 @@ export default () => {
               </Frame>
               <Frame flow-vertical gap-2 height-hug padding-2 width-fill>
                 <Frame flow-horizontal gap-2 height-hug width-fill>
-                  <Frame corner-radius-2 fill-primary-100 flow-vertical gap-1 height-hug padding-2 width-fill>
+                  <Frame corner-radius-lg fill-primary-100 flow-vertical gap-1 height-hug padding-2 width-fill>
                     <Text fill-text-800 typography-label-nowrap>
                       One
                     </Text>
@@ -1180,7 +1219,7 @@ export default () => {
                       A short card.
                     </Text>
                   </Frame>
-                  <Frame corner-radius-2 fill-secondary-100 flow-vertical gap-1 height-fill padding-2 width-fill>
+                  <Frame corner-radius-lg fill-secondary-100 flow-vertical gap-1 height-fill padding-2 width-fill>
                     <Text fill-text-800 typography-label-nowrap>
                       Two
                     </Text>
@@ -1190,7 +1229,7 @@ export default () => {
                   </Frame>
                 </Frame>
                 <Frame flow-horizontal gap-2 height-hug width-fill>
-                  <Frame corner-radius-2 fill-tertiary-100 flow-vertical gap-1 height-hug padding-2 width-fill>
+                  <Frame corner-radius-lg fill-tertiary-100 flow-vertical gap-1 height-hug padding-2 width-fill>
                     <Text fill-text-800 typography-label-nowrap>
                       Three
                     </Text>
@@ -1198,7 +1237,7 @@ export default () => {
                       {LOREM}
                     </Text>
                   </Frame>
-                  <Frame corner-radius-2 fill-positive-100 flow-vertical gap-1 height-hug padding-2 width-fill>
+                  <Frame corner-radius-lg fill-positive-100 flow-vertical gap-1 height-hug padding-2 width-fill>
                     <Text fill-text-800 typography-label-nowrap>
                       Four
                     </Text>
@@ -1266,14 +1305,14 @@ export default () => {
 
         <Section title="20. Frames without text" note="A bar chart and a checkerboard built only from frames.">
           <Frame alignment-bottom-left fill-white flow-horizontal gap-1 height-28 padding-2 width-fill>
-            <Frame corner-radius-top-left-1 corner-radius-top-right-1 fill-tertiary-300 height-4 width-fill />
-            <Frame corner-radius-top-left-1 corner-radius-top-right-1 fill-tertiary-400 height-8 width-fill />
-            <Frame corner-radius-top-left-1 corner-radius-top-right-1 fill-tertiary-500 height-12 width-fill />
-            <Frame corner-radius-top-left-1 corner-radius-top-right-1 fill-tertiary-600 height-20 width-fill />
-            <Frame corner-radius-top-left-1 corner-radius-top-right-1 fill-tertiary-700 height-24 width-fill />
-            <Frame corner-radius-top-left-1 corner-radius-top-right-1 fill-tertiary-500 height-16 width-fill />
-            <Frame corner-radius-top-left-1 corner-radius-top-right-1 fill-tertiary-400 height-10 width-fill />
-            <Frame corner-radius-top-left-1 corner-radius-top-right-1 fill-tertiary-300 height-6 width-fill />
+            <Frame corner-radius-top-left-sm corner-radius-top-right-sm fill-tertiary-300 height-4 width-fill />
+            <Frame corner-radius-top-left-sm corner-radius-top-right-sm fill-tertiary-400 height-8 width-fill />
+            <Frame corner-radius-top-left-sm corner-radius-top-right-sm fill-tertiary-500 height-12 width-fill />
+            <Frame corner-radius-top-left-sm corner-radius-top-right-sm fill-tertiary-600 height-20 width-fill />
+            <Frame corner-radius-top-left-sm corner-radius-top-right-sm fill-tertiary-700 height-24 width-fill />
+            <Frame corner-radius-top-left-sm corner-radius-top-right-sm fill-tertiary-500 height-16 width-fill />
+            <Frame corner-radius-top-left-sm corner-radius-top-right-sm fill-tertiary-400 height-10 width-fill />
+            <Frame corner-radius-top-left-sm corner-radius-top-right-sm fill-tertiary-300 height-6 width-fill />
           </Frame>
           <Frame flow-vertical height-hug width-hug>
             <Frame flow-horizontal>
@@ -1308,8 +1347,8 @@ export default () => {
           note="Fixed 28-wide cards that wrap onto new rows as the width shrinks."
         >
           <Frame alignment-top-left flow-horizontal gap-3 height-hug width-fill wrap>
-            <Frame corner-radius-3 effect-shadow-small fill-white flow-vertical gap-2 height-hug padding-3 width-28>
-              <Frame corner-radius-2 fill-primary-300 height-12 width-fill />
+            <Frame corner-radius-xl effect-shadow-small fill-white flow-vertical gap-2 height-hug padding-3 width-28>
+              <Frame corner-radius-lg fill-primary-300 height-12 width-fill />
               <Text fill-text-800 typography-label-nowrap>
                 Alpha
               </Text>
@@ -1317,8 +1356,8 @@ export default () => {
                 One line.
               </Text>
             </Frame>
-            <Frame corner-radius-3 effect-shadow-small fill-white flow-vertical gap-2 height-hug padding-3 width-28>
-              <Frame corner-radius-2 fill-secondary-300 height-12 width-fill />
+            <Frame corner-radius-xl effect-shadow-small fill-white flow-vertical gap-2 height-hug padding-3 width-28>
+              <Frame corner-radius-lg fill-secondary-300 height-12 width-fill />
               <Text fill-text-800 typography-label-nowrap>
                 Beta
               </Text>
@@ -1326,8 +1365,8 @@ export default () => {
                 A couple of lines of text in this card.
               </Text>
             </Frame>
-            <Frame corner-radius-3 effect-shadow-small fill-white flow-vertical gap-2 height-hug padding-3 width-28>
-              <Frame corner-radius-2 fill-tertiary-300 height-12 width-fill />
+            <Frame corner-radius-xl effect-shadow-small fill-white flow-vertical gap-2 height-hug padding-3 width-28>
+              <Frame corner-radius-lg fill-tertiary-300 height-12 width-fill />
               <Text fill-text-800 typography-label-nowrap>
                 Gamma
               </Text>
@@ -1335,8 +1374,8 @@ export default () => {
                 Short.
               </Text>
             </Frame>
-            <Frame corner-radius-3 effect-shadow-small fill-white flow-vertical gap-2 height-hug padding-3 width-28>
-              <Frame corner-radius-2 fill-positive-300 height-12 width-fill />
+            <Frame corner-radius-xl effect-shadow-small fill-white flow-vertical gap-2 height-hug padding-3 width-28>
+              <Frame corner-radius-lg fill-positive-300 height-12 width-fill />
               <Text fill-text-800 typography-label-nowrap>
                 Delta
               </Text>
@@ -1344,8 +1383,8 @@ export default () => {
                 {LOREM}
               </Text>
             </Frame>
-            <Frame corner-radius-3 effect-shadow-small fill-white flow-vertical gap-2 height-hug padding-3 width-28>
-              <Frame corner-radius-2 fill-negative-300 height-12 width-fill />
+            <Frame corner-radius-xl effect-shadow-small fill-white flow-vertical gap-2 height-hug padding-3 width-28>
+              <Frame corner-radius-lg fill-negative-300 height-12 width-fill />
               <Text fill-text-800 typography-label-nowrap>
                 Epsilon
               </Text>
