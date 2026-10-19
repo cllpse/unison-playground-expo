@@ -919,9 +919,7 @@ export default () => {
               </Frame>
             </Case>
           </Cases>
-          <Caption>
-            Vertical flow, 24 high: gap-vertical- spaces the items, gap-horizontal- the wrapped columns.
-          </Caption>
+          <Caption>Vertical flow, 24 high: gap-vertical- spaces items, gap-horizontal- the wrapped columns.</Caption>
           <Cases>
             <Case label="vertical-1 horizontal-6, wrap">
               <Frame fill-white autolayout-vertical gap-horizontal-6 gap-vertical-1 height-24 padding-2 wrap>
@@ -1701,14 +1699,7 @@ export default () => {
           </Cases>
           <Cases>
             <Case label="fill-hover-black">
-              <Frame
-                alignment-center
-                corner-radius-full
-                fill-violet-600
-                fill-hover-black
-                height-10
-                padding-horizontal-4
-              >
+              <Frame alignment-center corner-radius-3xl fill-blue-600 fill-hover-black height-10 padding-horizontal-4>
                 <Text fill-white typography-sm>
                   Button
                 </Text>
