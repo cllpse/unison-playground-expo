@@ -18,14 +18,14 @@ const LOREM_LONG = `${LOREM} ${LOREM} ${LOREM}`
 
 const Section = (p: { title: string; note: string; children?: ReactNode }) => {
   return (
-    <Frame flow-vertical gap-2 height-hug width-fill>
+    <Frame autolayout-vertical gap-2 height-hug width-fill>
       <Text fill-text-800 typography-header-small-wrap>
         {p.title}
       </Text>
       <Text fill-neutral-600 typography-body-small-wrap>
         {p.note}
       </Text>
-      <Frame corner-radius-xl fill-neutralsurface-100 flow-vertical gap-4 height-hug padding-4 width-fill>
+      <Frame corner-radius-xl fill-neutralsurface-100 autolayout-vertical gap-4 height-hug padding-4 width-fill>
         {p.children}
       </Frame>
     </Frame>
@@ -34,7 +34,7 @@ const Section = (p: { title: string; note: string; children?: ReactNode }) => {
 
 const Case = (p: { label: string; children?: ReactNode }) => {
   return (
-    <Frame flow-vertical gap-1 height-hug width-hug>
+    <Frame autolayout-vertical gap-1 height-hug width-hug>
       {p.children}
       <Text fill-neutral-600 typography-label-small-nowrap>
         {p.label}
@@ -55,7 +55,7 @@ export default () => {
   return (
     <ScrollView>
       <StatusBar style="auto" />
-      <Frame fill-white flow-vertical gap-10 height-hug padding-horizontal-4 padding-vertical-16 width-fill>
+      <Frame fill-white autolayout-vertical gap-10 height-hug padding-horizontal-4 padding-vertical-16 width-fill>
         <Text fill-text-800 typography-display-wrap>
           Frame and Text test suite
         </Text>
@@ -64,7 +64,7 @@ export default () => {
           title="1. Empty frames"
           note="Fixed sizes and padding keep empty frames visible. The red hug frame has no children and should collapse to nothing."
         >
-          <Frame alignment-bottom-left flow-horizontal gap-4 height-hug width-fill wrap>
+          <Frame alignment-bottom-left autolayout-horizontal gap-4 height-hug width-fill wrap>
             <Case label="12 x 12">
               <Frame fill-primary-500 height-12 width-12 />
             </Case>
@@ -89,7 +89,7 @@ export default () => {
         </Section>
 
         <Section title="2. Fixed sizes" note="Squares from width-1 to width-32, bottom aligned in a wrapping row.">
-          <Frame alignment-bottom-left flow-horizontal gap-2 height-hug width-fill wrap>
+          <Frame alignment-bottom-left autolayout-horizontal gap-2 height-hug width-fill wrap>
             <Case label="1">
               <Frame fill-primary-700 height-1 width-1 />
             </Case>
@@ -146,19 +146,19 @@ export default () => {
           note="Fill children share the space left over by fixed and hug siblings. Fixed frames never shrink."
         >
           <Caption>fixed 16 | fill | fixed 16</Caption>
-          <Frame flow-horizontal gap-2 height-hug width-fill>
+          <Frame autolayout-horizontal gap-2 height-hug width-fill>
             <Frame fill-primary-700 height-12 width-16 />
             <Frame fill-primary-300 height-12 width-fill />
             <Frame fill-primary-700 height-12 width-16 />
           </Frame>
           <Caption>fill | fill | fill (equal widths)</Caption>
-          <Frame flow-horizontal gap-2 height-hug width-fill>
+          <Frame autolayout-horizontal gap-2 height-hug width-fill>
             <Frame fill-secondary-300 height-12 width-fill />
             <Frame fill-secondary-500 height-12 width-fill />
             <Frame fill-secondary-700 height-12 width-fill />
           </Frame>
           <Caption>hug text | fill | hug text</Caption>
-          <Frame flow-horizontal gap-2 height-hug width-fill>
+          <Frame autolayout-horizontal gap-2 height-hug width-fill>
             <Frame fill-tertiary-200 height-hug padding-2 width-hug>
               <Text fill-text-800 typography-body-small-nowrap>
                 Hug left
@@ -172,9 +172,9 @@ export default () => {
             </Frame>
           </Frame>
           <Caption>fixed 12 | fill with long nowrap text (truncates) | fixed 12</Caption>
-          <Frame alignment-left flow-horizontal gap-2 height-hug width-fill>
+          <Frame alignment-left autolayout-horizontal gap-2 height-hug width-fill>
             <Frame fill-positive-500 height-12 width-12 />
-            <Frame flow-vertical height-hug width-fill>
+            <Frame autolayout-vertical height-hug width-fill>
               <Text fill-text-800 typography-body-nowrap>
                 {LOREM}
               </Text>
@@ -182,7 +182,7 @@ export default () => {
             <Frame fill-positive-500 height-12 width-12 />
           </Frame>
           <Caption>width-full child</Caption>
-          <Frame flow-horizontal height-hug width-fill>
+          <Frame autolayout-horizontal height-hug width-fill>
             <Frame fill-tentative-brand height-6 width-full />
           </Frame>
         </Section>
@@ -191,18 +191,18 @@ export default () => {
           title="4. Columns: fixed, hug and fill"
           note="Three 28-high columns side by side. Fill children split the height left by fixed siblings."
         >
-          <Frame flow-horizontal gap-4 height-28 width-fill>
-            <Frame flow-vertical gap-1 height-fill width-fill>
+          <Frame autolayout-horizontal gap-4 height-28 width-fill>
+            <Frame autolayout-vertical gap-1 height-fill width-fill>
               <Frame fill-primary-700 height-6 width-fill />
               <Frame fill-primary-300 height-fill width-fill />
               <Frame fill-primary-700 height-6 width-fill />
             </Frame>
-            <Frame flow-vertical gap-1 height-fill width-fill>
+            <Frame autolayout-vertical gap-1 height-fill width-fill>
               <Frame fill-secondary-300 height-fill width-fill />
               <Frame fill-secondary-500 height-fill width-fill />
               <Frame fill-secondary-700 height-fill width-fill />
             </Frame>
-            <Frame fill-tertiary-100 flow-vertical gap-1 height-fill width-fill>
+            <Frame fill-tertiary-100 autolayout-vertical gap-1 height-fill width-fill>
               <Frame fill-tertiary-500 height-hug padding-1 width-hug>
                 <Text fill-white typography-label-small-nowrap>
                   hug
@@ -222,9 +222,9 @@ export default () => {
           note="A frame that fills both axes grows along its parent's direction and stretches across it."
         >
           <Caption>row, height-20: fixed 12 | fill both | fixed 12</Caption>
-          <Frame fill-neutralsurface-300 flow-horizontal gap-2 height-20 padding-2 width-fill>
+          <Frame fill-neutralsurface-300 autolayout-horizontal gap-2 height-20 padding-2 width-fill>
             <Frame fill-primary-700 height-12 width-12 />
-            <Frame alignment-center fill-primary-300 flow-vertical height-fill width-fill>
+            <Frame alignment-center fill-primary-300 autolayout-vertical height-fill width-fill>
               <Text fill-text-800 typography-label-small-nowrap>
                 fill both
               </Text>
@@ -232,7 +232,7 @@ export default () => {
             <Frame fill-primary-700 height-12 width-12 />
           </Frame>
           <Caption>column, height-28: fixed 6 | fill both | fill both</Caption>
-          <Frame fill-neutralsurface-300 flow-vertical gap-2 height-28 padding-2 width-fill>
+          <Frame fill-neutralsurface-300 autolayout-vertical gap-2 height-28 padding-2 width-fill>
             <Frame fill-secondary-700 height-6 width-6 />
             <Frame fill-secondary-300 height-fill width-fill />
             <Frame fill-secondary-500 height-fill width-fill />
@@ -240,7 +240,7 @@ export default () => {
         </Section>
 
         <Section title="6. Padding" note="An 8 x 8 dark box inside a light frame with each padding flag.">
-          <Frame alignment-top-left flow-horizontal gap-4 height-hug width-fill wrap>
+          <Frame alignment-top-left autolayout-horizontal gap-4 height-hug width-fill wrap>
             <Case label="padding-0">
               <Frame fill-primary-200 padding-0>
                 <Frame fill-primary-700 height-8 width-8 />
@@ -311,58 +311,58 @@ export default () => {
         </Section>
 
         <Section title="7. Gaps" note="Three 6 x 6 boxes per row, then a column, with each gap flag.">
-          <Frame alignment-top-left flow-horizontal gap-6 height-hug width-fill wrap>
+          <Frame alignment-top-left autolayout-horizontal gap-6 height-hug width-fill wrap>
             <Case label="gap-0">
-              <Frame flow-horizontal gap-0>
+              <Frame autolayout-horizontal gap-0>
                 <Frame fill-secondary-700 height-6 width-6 />
                 <Frame fill-secondary-500 height-6 width-6 />
                 <Frame fill-secondary-300 height-6 width-6 />
               </Frame>
             </Case>
             <Case label="gap-px">
-              <Frame flow-horizontal gap-px>
+              <Frame autolayout-horizontal gap-px>
                 <Frame fill-secondary-700 height-6 width-6 />
                 <Frame fill-secondary-500 height-6 width-6 />
                 <Frame fill-secondary-300 height-6 width-6 />
               </Frame>
             </Case>
             <Case label="gap-0p5">
-              <Frame flow-horizontal gap-0p5>
+              <Frame autolayout-horizontal gap-0p5>
                 <Frame fill-secondary-700 height-6 width-6 />
                 <Frame fill-secondary-500 height-6 width-6 />
                 <Frame fill-secondary-300 height-6 width-6 />
               </Frame>
             </Case>
             <Case label="gap-1">
-              <Frame flow-horizontal gap-1>
+              <Frame autolayout-horizontal gap-1>
                 <Frame fill-secondary-700 height-6 width-6 />
                 <Frame fill-secondary-500 height-6 width-6 />
                 <Frame fill-secondary-300 height-6 width-6 />
               </Frame>
             </Case>
             <Case label="gap-2">
-              <Frame flow-horizontal gap-2>
+              <Frame autolayout-horizontal gap-2>
                 <Frame fill-secondary-700 height-6 width-6 />
                 <Frame fill-secondary-500 height-6 width-6 />
                 <Frame fill-secondary-300 height-6 width-6 />
               </Frame>
             </Case>
             <Case label="gap-4">
-              <Frame flow-horizontal gap-4>
+              <Frame autolayout-horizontal gap-4>
                 <Frame fill-secondary-700 height-6 width-6 />
                 <Frame fill-secondary-500 height-6 width-6 />
                 <Frame fill-secondary-300 height-6 width-6 />
               </Frame>
             </Case>
             <Case label="gap-8">
-              <Frame flow-horizontal gap-8>
+              <Frame autolayout-horizontal gap-8>
                 <Frame fill-secondary-700 height-6 width-6 />
                 <Frame fill-secondary-500 height-6 width-6 />
                 <Frame fill-secondary-300 height-6 width-6 />
               </Frame>
             </Case>
             <Case label="column gap-3">
-              <Frame flow-vertical gap-3>
+              <Frame autolayout-vertical gap-3>
                 <Frame fill-secondary-700 height-6 width-6 />
                 <Frame fill-secondary-500 height-6 width-6 />
                 <Frame fill-secondary-300 height-6 width-6 />
@@ -372,7 +372,7 @@ export default () => {
         </Section>
 
         <Section title="8. Corner radius" note="16 x 16 squares with each corner flag.">
-          <Frame alignment-top-left flow-horizontal gap-4 height-hug width-fill wrap>
+          <Frame alignment-top-left autolayout-horizontal gap-4 height-hug width-fill wrap>
             <Case label="none">
               <Frame corner-radius-none fill-tertiary-500 height-16 width-16 />
             </Case>
@@ -428,51 +428,51 @@ export default () => {
         </Section>
 
         <Section title="9. Fills and strokes" note="Each palette at 300, 500, 700 and brand, then strokes on white.">
-          <Frame flow-vertical gap-1 height-hug width-fill>
-            <Frame flow-horizontal gap-1 height-hug width-fill>
+          <Frame autolayout-vertical gap-1 height-hug width-fill>
+            <Frame autolayout-horizontal gap-1 height-hug width-fill>
               <Frame fill-primary-300 height-8 width-fill />
               <Frame fill-primary-500 height-8 width-fill />
               <Frame fill-primary-700 height-8 width-fill />
               <Frame fill-primary-brand height-8 width-fill />
             </Frame>
-            <Frame flow-horizontal gap-1 height-hug width-fill>
+            <Frame autolayout-horizontal gap-1 height-hug width-fill>
               <Frame fill-secondary-300 height-8 width-fill />
               <Frame fill-secondary-500 height-8 width-fill />
               <Frame fill-secondary-700 height-8 width-fill />
               <Frame fill-secondary-brand height-8 width-fill />
             </Frame>
-            <Frame flow-horizontal gap-1 height-hug width-fill>
+            <Frame autolayout-horizontal gap-1 height-hug width-fill>
               <Frame fill-tertiary-300 height-8 width-fill />
               <Frame fill-tertiary-500 height-8 width-fill />
               <Frame fill-tertiary-700 height-8 width-fill />
               <Frame fill-tertiary-brand height-8 width-fill />
             </Frame>
-            <Frame flow-horizontal gap-1 height-hug width-fill>
+            <Frame autolayout-horizontal gap-1 height-hug width-fill>
               <Frame fill-tentative-300 height-8 width-fill />
               <Frame fill-tentative-500 height-8 width-fill />
               <Frame fill-tentative-700 height-8 width-fill />
               <Frame fill-tentative-brand height-8 width-fill />
             </Frame>
-            <Frame flow-horizontal gap-1 height-hug width-fill>
+            <Frame autolayout-horizontal gap-1 height-hug width-fill>
               <Frame fill-positive-300 height-8 width-fill />
               <Frame fill-positive-500 height-8 width-fill />
               <Frame fill-positive-700 height-8 width-fill />
               <Frame fill-positive-brand height-8 width-fill />
             </Frame>
-            <Frame flow-horizontal gap-1 height-hug width-fill>
+            <Frame autolayout-horizontal gap-1 height-hug width-fill>
               <Frame fill-negative-300 height-8 width-fill />
               <Frame fill-negative-500 height-8 width-fill />
               <Frame fill-negative-700 height-8 width-fill />
               <Frame fill-negative-brand height-8 width-fill />
             </Frame>
-            <Frame flow-horizontal gap-1 height-hug width-fill>
+            <Frame autolayout-horizontal gap-1 height-hug width-fill>
               <Frame fill-neutral-300 height-8 width-fill />
               <Frame fill-neutral-500 height-8 width-fill />
               <Frame fill-neutral-700 height-8 width-fill />
               <Frame fill-black height-8 width-fill />
             </Frame>
           </Frame>
-          <Frame alignment-top-left flow-horizontal gap-4 height-hug width-fill wrap>
+          <Frame alignment-top-left autolayout-horizontal gap-4 height-hug width-fill wrap>
             <Case label="stroke solid">
               <Frame fill-white height-16 stroke-neutral-600 stroke-style-solid width-16 />
             </Case>
@@ -495,7 +495,7 @@ export default () => {
         </Section>
 
         <Section title="10. Shadows" note="Tinted shadows on white and primary frames, then Tailwind's shadow scale.">
-          <Frame alignment-top-left fill-white flow-horizontal gap-6 height-hug padding-4 width-fill wrap>
+          <Frame alignment-top-left fill-white autolayout-horizontal gap-6 height-hug padding-4 width-fill wrap>
             <Case label="white none">
               <Frame corner-radius-lg effect-shadow-none fill-white height-16 width-16 />
             </Case>
@@ -539,115 +539,115 @@ export default () => {
           title="11. Alignment"
           note="20 x 20 frames with each alignment flag. Horizontal flow holds two boxes side by side, vertical flow stacks them."
         >
-          <Caption>flow-horizontal</Caption>
-          <Frame alignment-top-left flow-horizontal gap-4 height-hug width-fill wrap>
+          <Caption>autolayout-horizontal</Caption>
+          <Frame alignment-top-left autolayout-horizontal gap-4 height-hug width-fill wrap>
             <Case label="top-left">
-              <Frame alignment-top-left fill-neutralsurface-300 flow-horizontal gap-1 height-20 width-20>
+              <Frame alignment-top-left fill-neutralsurface-300 autolayout-horizontal gap-1 height-20 width-20>
                 <Frame fill-primary-700 height-4 width-4 />
                 <Frame fill-primary-400 height-6 width-4 />
               </Frame>
             </Case>
             <Case label="top-center">
-              <Frame alignment-top-center fill-neutralsurface-300 flow-horizontal gap-1 height-20 width-20>
+              <Frame alignment-top-center fill-neutralsurface-300 autolayout-horizontal gap-1 height-20 width-20>
                 <Frame fill-primary-700 height-4 width-4 />
                 <Frame fill-primary-400 height-6 width-4 />
               </Frame>
             </Case>
             <Case label="top-right">
-              <Frame alignment-top-right fill-neutralsurface-300 flow-horizontal gap-1 height-20 width-20>
+              <Frame alignment-top-right fill-neutralsurface-300 autolayout-horizontal gap-1 height-20 width-20>
                 <Frame fill-primary-700 height-4 width-4 />
                 <Frame fill-primary-400 height-6 width-4 />
               </Frame>
             </Case>
             <Case label="left">
-              <Frame alignment-left fill-neutralsurface-300 flow-horizontal gap-1 height-20 width-20>
+              <Frame alignment-left fill-neutralsurface-300 autolayout-horizontal gap-1 height-20 width-20>
                 <Frame fill-primary-700 height-4 width-4 />
                 <Frame fill-primary-400 height-6 width-4 />
               </Frame>
             </Case>
             <Case label="center">
-              <Frame alignment-center fill-neutralsurface-300 flow-horizontal gap-1 height-20 width-20>
+              <Frame alignment-center fill-neutralsurface-300 autolayout-horizontal gap-1 height-20 width-20>
                 <Frame fill-primary-700 height-4 width-4 />
                 <Frame fill-primary-400 height-6 width-4 />
               </Frame>
             </Case>
             <Case label="right">
-              <Frame alignment-right fill-neutralsurface-300 flow-horizontal gap-1 height-20 width-20>
+              <Frame alignment-right fill-neutralsurface-300 autolayout-horizontal gap-1 height-20 width-20>
                 <Frame fill-primary-700 height-4 width-4 />
                 <Frame fill-primary-400 height-6 width-4 />
               </Frame>
             </Case>
             <Case label="bottom-left">
-              <Frame alignment-bottom-left fill-neutralsurface-300 flow-horizontal gap-1 height-20 width-20>
+              <Frame alignment-bottom-left fill-neutralsurface-300 autolayout-horizontal gap-1 height-20 width-20>
                 <Frame fill-primary-700 height-4 width-4 />
                 <Frame fill-primary-400 height-6 width-4 />
               </Frame>
             </Case>
             <Case label="bottom-center">
-              <Frame alignment-bottom-center fill-neutralsurface-300 flow-horizontal gap-1 height-20 width-20>
+              <Frame alignment-bottom-center fill-neutralsurface-300 autolayout-horizontal gap-1 height-20 width-20>
                 <Frame fill-primary-700 height-4 width-4 />
                 <Frame fill-primary-400 height-6 width-4 />
               </Frame>
             </Case>
             <Case label="bottom-right">
-              <Frame alignment-bottom-right fill-neutralsurface-300 flow-horizontal gap-1 height-20 width-20>
+              <Frame alignment-bottom-right fill-neutralsurface-300 autolayout-horizontal gap-1 height-20 width-20>
                 <Frame fill-primary-700 height-4 width-4 />
                 <Frame fill-primary-400 height-6 width-4 />
               </Frame>
             </Case>
           </Frame>
-          <Caption>flow-vertical</Caption>
-          <Frame alignment-top-left flow-horizontal gap-4 height-hug width-fill wrap>
+          <Caption>autolayout-vertical</Caption>
+          <Frame alignment-top-left autolayout-horizontal gap-4 height-hug width-fill wrap>
             <Case label="top-left">
-              <Frame alignment-top-left fill-neutralsurface-300 flow-vertical gap-1 height-20 width-20>
+              <Frame alignment-top-left fill-neutralsurface-300 autolayout-vertical gap-1 height-20 width-20>
                 <Frame fill-secondary-700 height-4 width-4 />
                 <Frame fill-secondary-400 height-4 width-6 />
               </Frame>
             </Case>
             <Case label="top-center">
-              <Frame alignment-top-center fill-neutralsurface-300 flow-vertical gap-1 height-20 width-20>
+              <Frame alignment-top-center fill-neutralsurface-300 autolayout-vertical gap-1 height-20 width-20>
                 <Frame fill-secondary-700 height-4 width-4 />
                 <Frame fill-secondary-400 height-4 width-6 />
               </Frame>
             </Case>
             <Case label="top-right">
-              <Frame alignment-top-right fill-neutralsurface-300 flow-vertical gap-1 height-20 width-20>
+              <Frame alignment-top-right fill-neutralsurface-300 autolayout-vertical gap-1 height-20 width-20>
                 <Frame fill-secondary-700 height-4 width-4 />
                 <Frame fill-secondary-400 height-4 width-6 />
               </Frame>
             </Case>
             <Case label="left">
-              <Frame alignment-left fill-neutralsurface-300 flow-vertical gap-1 height-20 width-20>
+              <Frame alignment-left fill-neutralsurface-300 autolayout-vertical gap-1 height-20 width-20>
                 <Frame fill-secondary-700 height-4 width-4 />
                 <Frame fill-secondary-400 height-4 width-6 />
               </Frame>
             </Case>
             <Case label="center">
-              <Frame alignment-center fill-neutralsurface-300 flow-vertical gap-1 height-20 width-20>
+              <Frame alignment-center fill-neutralsurface-300 autolayout-vertical gap-1 height-20 width-20>
                 <Frame fill-secondary-700 height-4 width-4 />
                 <Frame fill-secondary-400 height-4 width-6 />
               </Frame>
             </Case>
             <Case label="right">
-              <Frame alignment-right fill-neutralsurface-300 flow-vertical gap-1 height-20 width-20>
+              <Frame alignment-right fill-neutralsurface-300 autolayout-vertical gap-1 height-20 width-20>
                 <Frame fill-secondary-700 height-4 width-4 />
                 <Frame fill-secondary-400 height-4 width-6 />
               </Frame>
             </Case>
             <Case label="bottom-left">
-              <Frame alignment-bottom-left fill-neutralsurface-300 flow-vertical gap-1 height-20 width-20>
+              <Frame alignment-bottom-left fill-neutralsurface-300 autolayout-vertical gap-1 height-20 width-20>
                 <Frame fill-secondary-700 height-4 width-4 />
                 <Frame fill-secondary-400 height-4 width-6 />
               </Frame>
             </Case>
             <Case label="bottom-center">
-              <Frame alignment-bottom-center fill-neutralsurface-300 flow-vertical gap-1 height-20 width-20>
+              <Frame alignment-bottom-center fill-neutralsurface-300 autolayout-vertical gap-1 height-20 width-20>
                 <Frame fill-secondary-700 height-4 width-4 />
                 <Frame fill-secondary-400 height-4 width-6 />
               </Frame>
             </Case>
             <Case label="bottom-right">
-              <Frame alignment-bottom-right fill-neutralsurface-300 flow-vertical gap-1 height-20 width-20>
+              <Frame alignment-bottom-right fill-neutralsurface-300 autolayout-vertical gap-1 height-20 width-20>
                 <Frame fill-secondary-700 height-4 width-4 />
                 <Frame fill-secondary-400 height-4 width-6 />
               </Frame>
@@ -659,7 +659,7 @@ export default () => {
           title="12. Wrapping"
           note="Pills in a wrapping row, then the same boxes in a 28-wide frame with and without wrap."
         >
-          <Frame flow-horizontal gap-2 height-hug width-fill wrap>
+          <Frame autolayout-horizontal gap-2 height-hug width-fill wrap>
             <Frame corner-radius-full fill-primary-100 padding-horizontal-3 padding-vertical-1>
               <Text fill-primary-800 typography-label-small-nowrap>
                 Design
@@ -711,9 +711,9 @@ export default () => {
               </Text>
             </Frame>
           </Frame>
-          <Frame alignment-top-left flow-horizontal gap-6 height-hug width-fill wrap>
+          <Frame alignment-top-left autolayout-horizontal gap-6 height-hug width-fill wrap>
             <Case label="width-28, wrap">
-              <Frame fill-white flow-horizontal gap-1 height-hug padding-1 width-28 wrap>
+              <Frame fill-white autolayout-horizontal gap-1 height-hug padding-1 width-28 wrap>
                 <Frame fill-tertiary-300 height-6 width-6 />
                 <Frame fill-tertiary-400 height-6 width-6 />
                 <Frame fill-tertiary-500 height-6 width-6 />
@@ -724,7 +724,7 @@ export default () => {
               </Frame>
             </Case>
             <Case label="width-28, no wrap (overflows)">
-              <Frame fill-white flow-horizontal gap-1 height-hug padding-1 width-28>
+              <Frame fill-white autolayout-horizontal gap-1 height-hug padding-1 width-28>
                 <Frame fill-tertiary-300 height-6 width-6 />
                 <Frame fill-tertiary-400 height-6 width-6 />
                 <Frame fill-tertiary-500 height-6 width-6 />
@@ -738,7 +738,7 @@ export default () => {
         </Section>
 
         <Section title="13. Typography" note="Every typography flag, in black.">
-          <Frame flow-vertical gap-2 height-hug width-fill>
+          <Frame autolayout-vertical gap-2 height-hug width-fill>
             <Text fill-text-800 typography-display-wrap>
               display-wrap
             </Text>
@@ -798,208 +798,208 @@ export default () => {
           note="Each type in a 28-wide frame and a fill frame with text longer than any screen. Types ending in -wrap may wrap; every other type stays on one line and ends in an ellipsis."
         >
           <Caption>timecode</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-timecode>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-timecode>
                 {LOREM_LONG}
               </Text>
             </Frame>
           </Frame>
           <Caption>display-wrap</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-display-wrap>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-display-wrap>
                 {LOREM_LONG}
               </Text>
             </Frame>
           </Frame>
           <Caption>header-wrap</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-header-wrap>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-header-wrap>
                 {LOREM_LONG}
               </Text>
             </Frame>
           </Frame>
           <Caption>header-small-wrap</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-header-small-wrap>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-header-small-wrap>
                 {LOREM_LONG}
               </Text>
             </Frame>
           </Frame>
           <Caption>body-wrap</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-body-wrap>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-body-wrap>
                 {LOREM_LONG}
               </Text>
             </Frame>
           </Frame>
           <Caption>body-nowrap</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-body-nowrap>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-body-nowrap>
                 {LOREM_LONG}
               </Text>
             </Frame>
           </Frame>
           <Caption>body-small-wrap</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-body-small-wrap>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-body-small-wrap>
                 {LOREM_LONG}
               </Text>
             </Frame>
           </Frame>
           <Caption>body-small-nowrap</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-body-small-nowrap>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-body-small-nowrap>
                 {LOREM_LONG}
               </Text>
             </Frame>
           </Frame>
           <Caption>mono-wrap</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-mono-wrap>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-mono-wrap>
                 {LOREM_LONG}
               </Text>
             </Frame>
           </Frame>
           <Caption>mono-nowrap</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-mono-nowrap>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-mono-nowrap>
                 {LOREM_LONG}
               </Text>
             </Frame>
           </Frame>
           <Caption>mono-small-wrap</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-mono-small-wrap>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-mono-small-wrap>
                 {LOREM_LONG}
               </Text>
             </Frame>
           </Frame>
           <Caption>mono-small-nowrap</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-mono-small-nowrap>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-mono-small-nowrap>
                 {LOREM_LONG}
               </Text>
             </Frame>
           </Frame>
           <Caption>label-wrap</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-label-wrap>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-label-wrap>
                 {LOREM_LONG}
               </Text>
             </Frame>
           </Frame>
           <Caption>label-nowrap</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-label-nowrap>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-label-nowrap>
                 {LOREM_LONG}
               </Text>
             </Frame>
           </Frame>
           <Caption>label-small-wrap</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-label-small-wrap>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-label-small-wrap>
                 {LOREM_LONG}
               </Text>
             </Frame>
           </Frame>
           <Caption>label-small-nowrap</Caption>
-          <Frame alignment-top-left flow-horizontal gap-2 height-hug width-fill>
-            <Frame fill-white flow-vertical padding-2 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-2 height-hug width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-28>
               <Text fill-text-800 typography-label-small-nowrap>
                 {LOREM}
               </Text>
             </Frame>
-            <Frame fill-white flow-vertical padding-2 width-fill>
+            <Frame fill-white autolayout-vertical padding-2 width-fill>
               <Text fill-text-800 typography-label-small-nowrap>
                 {LOREM_LONG}
               </Text>
@@ -1026,7 +1026,7 @@ export default () => {
               {LOREM}
             </Text>
           </Frame>
-          <Frame alignment-top-left flow-horizontal gap-4 height-hug width-fill wrap>
+          <Frame alignment-top-left autolayout-horizontal gap-4 height-hug width-fill wrap>
             <Case label="width-28, body-small-wrap">
               <Frame fill-white padding-2 width-28>
                 <Text fill-text-800 typography-body-small-wrap>
@@ -1050,7 +1050,7 @@ export default () => {
             </Case>
           </Frame>
           <Caption>two texts side by side, each in a fill frame</Caption>
-          <Frame flow-horizontal gap-3 height-hug width-fill>
+          <Frame autolayout-horizontal gap-3 height-hug width-fill>
             <Frame fill-white padding-2 width-fill>
               <Text fill-text-800 typography-body-small-wrap>
                 {LOREM}
@@ -1065,9 +1065,18 @@ export default () => {
         </Section>
 
         <Section title="16. Card" note="Text and frames nested into a card with a shadow, tag and buttons.">
-          <Frame corner-radius-2xl effect-shadow-large fill-white flow-vertical gap-3 height-hug padding-4 width-fill>
-            <Frame alignment-left flow-horizontal gap-2 height-hug width-fill>
-              <Frame flow-vertical height-hug width-fill>
+          <Frame
+            corner-radius-2xl
+            effect-shadow-large
+            fill-white
+            autolayout-vertical
+            gap-3
+            height-hug
+            padding-4
+            width-fill
+          >
+            <Frame alignment-left autolayout-horizontal gap-2 height-hug width-fill>
+              <Frame autolayout-vertical height-hug width-fill>
                 <Text fill-text-800 typography-header-small-wrap>
                   Quarterly review
                 </Text>
@@ -1085,7 +1094,7 @@ export default () => {
             <Text fill-text-800 typography-body-wrap>
               {LOREM}
             </Text>
-            <Frame alignment-right flow-horizontal gap-2 height-hug width-fill>
+            <Frame alignment-right autolayout-horizontal gap-2 height-hug width-fill>
               <Frame alignment-center corner-radius-full height-10 padding-horizontal-4 stroke-neutral-400 width-hug>
                 <Text fill-text-800 typography-label-nowrap>
                   Decline
@@ -1104,14 +1113,14 @@ export default () => {
           title="17. List rows"
           note="Avatar, two lines of text that truncate, and a trailing badge. The middle column fills."
         >
-          <Frame corner-radius-xl fill-white flow-vertical height-hug width-fill>
-            <Frame alignment-left flow-horizontal gap-3 height-hug padding-3 width-fill>
+          <Frame corner-radius-xl fill-white autolayout-vertical height-hug width-fill>
+            <Frame alignment-left autolayout-horizontal gap-3 height-hug padding-3 width-fill>
               <Frame alignment-center corner-radius-full fill-primary-200 height-10 width-10>
                 <Text fill-primary-800 typography-label-nowrap>
                   AL
                 </Text>
               </Frame>
-              <Frame flow-vertical height-hug width-fill>
+              <Frame autolayout-vertical height-hug width-fill>
                 <Text fill-text-800 typography-body-nowrap>
                   Ada Lovelace
                 </Text>
@@ -1126,13 +1135,13 @@ export default () => {
               </Frame>
             </Frame>
             <Frame fill-neutral-200 height-px width-fill />
-            <Frame alignment-left flow-horizontal gap-3 height-hug padding-3 width-fill>
+            <Frame alignment-left autolayout-horizontal gap-3 height-hug padding-3 width-fill>
               <Frame alignment-center corner-radius-full fill-secondary-200 height-10 width-10>
                 <Text fill-secondary-800 typography-label-nowrap>
                   GH
                 </Text>
               </Frame>
-              <Frame flow-vertical height-hug width-fill>
+              <Frame autolayout-vertical height-hug width-fill>
                 <Text fill-text-800 typography-body-nowrap>
                   Grace Hopper with a name long enough to truncate on a narrow phone screen
                 </Text>
@@ -1147,13 +1156,13 @@ export default () => {
               </Frame>
             </Frame>
             <Frame fill-neutral-200 height-px width-fill />
-            <Frame alignment-left flow-horizontal gap-3 height-hug padding-3 width-fill>
+            <Frame alignment-left autolayout-horizontal gap-3 height-hug padding-3 width-fill>
               <Frame alignment-center corner-radius-full fill-tertiary-200 height-10 width-10>
                 <Text fill-tertiary-800 typography-label-nowrap>
                   KJ
                 </Text>
               </Frame>
-              <Frame flow-vertical height-hug width-fill>
+              <Frame autolayout-vertical height-hug width-fill>
                 <Text fill-text-800 typography-body-nowrap>
                   Katherine Johnson
                 </Text>
@@ -1171,28 +1180,28 @@ export default () => {
           title="18. Rows of columns, columns of rows"
           note="An app shell: header, a sidebar beside a 2 x 2 grid of fill cards, and a footer."
         >
-          <Frame corner-radius-xl fill-white flow-vertical height-hug stroke-neutral-300 width-fill>
+          <Frame corner-radius-xl fill-white autolayout-vertical height-hug stroke-neutral-300 width-fill>
             <Frame
               alignment-left
               corner-radius-top-left-xl
               corner-radius-top-right-xl
               fill-neutral-700
-              flow-horizontal
+              autolayout-horizontal
               gap-2
               height-12
               padding-horizontal-3
               width-fill
             >
               <Frame corner-radius-sm fill-primary-500 height-6 width-6 />
-              <Frame flow-vertical width-fill>
+              <Frame autolayout-vertical width-fill>
                 <Text fill-white typography-label-nowrap>
                   Header
                 </Text>
               </Frame>
               <Frame corner-radius-full fill-neutral-500 height-6 width-6 />
             </Frame>
-            <Frame flow-horizontal height-hug width-fill>
-              <Frame fill-neutralsurface-100 flow-vertical gap-1 height-fill padding-2 width-24>
+            <Frame autolayout-horizontal height-hug width-fill>
+              <Frame fill-neutralsurface-100 autolayout-vertical gap-1 height-fill padding-2 width-24>
                 <Frame corner-radius-sm fill-primary-100 padding-2 width-fill>
                   <Text fill-primary-800 typography-label-small-nowrap>
                     Inbox
@@ -1209,9 +1218,9 @@ export default () => {
                   </Text>
                 </Frame>
               </Frame>
-              <Frame flow-vertical gap-2 height-hug padding-2 width-fill>
-                <Frame flow-horizontal gap-2 height-hug width-fill>
-                  <Frame corner-radius-lg fill-primary-100 flow-vertical gap-1 height-hug padding-2 width-fill>
+              <Frame autolayout-vertical gap-2 height-hug padding-2 width-fill>
+                <Frame autolayout-horizontal gap-2 height-hug width-fill>
+                  <Frame corner-radius-lg fill-primary-100 autolayout-vertical gap-1 height-hug padding-2 width-fill>
                     <Text fill-text-800 typography-label-nowrap>
                       One
                     </Text>
@@ -1219,7 +1228,7 @@ export default () => {
                       A short card.
                     </Text>
                   </Frame>
-                  <Frame corner-radius-lg fill-secondary-100 flow-vertical gap-1 height-fill padding-2 width-fill>
+                  <Frame corner-radius-lg fill-secondary-100 autolayout-vertical gap-1 height-fill padding-2 width-fill>
                     <Text fill-text-800 typography-label-nowrap>
                       Two
                     </Text>
@@ -1228,8 +1237,8 @@ export default () => {
                     </Text>
                   </Frame>
                 </Frame>
-                <Frame flow-horizontal gap-2 height-hug width-fill>
-                  <Frame corner-radius-lg fill-tertiary-100 flow-vertical gap-1 height-hug padding-2 width-fill>
+                <Frame autolayout-horizontal gap-2 height-hug width-fill>
+                  <Frame corner-radius-lg fill-tertiary-100 autolayout-vertical gap-1 height-hug padding-2 width-fill>
                     <Text fill-text-800 typography-label-nowrap>
                       Three
                     </Text>
@@ -1237,7 +1246,7 @@ export default () => {
                       {LOREM}
                     </Text>
                   </Frame>
-                  <Frame corner-radius-lg fill-positive-100 flow-vertical gap-1 height-hug padding-2 width-fill>
+                  <Frame corner-radius-lg fill-positive-100 autolayout-vertical gap-1 height-hug padding-2 width-fill>
                     <Text fill-text-800 typography-label-nowrap>
                       Four
                     </Text>
@@ -1288,8 +1297,8 @@ export default () => {
               <Frame fill-secondary-200 padding-2 width-fill>
                 <Frame fill-secondary-300 padding-2 width-fill>
                   <Frame fill-secondary-400 padding-2 width-fill>
-                    <Frame alignment-left fill-secondary-700 flow-horizontal gap-2 padding-2 width-fill>
-                      <Frame flow-vertical width-fill>
+                    <Frame alignment-left fill-secondary-700 autolayout-horizontal gap-2 padding-2 width-fill>
+                      <Frame autolayout-vertical width-fill>
                         <Text fill-white typography-body-small-nowrap>
                           level 6, fill
                         </Text>
@@ -1304,7 +1313,7 @@ export default () => {
         </Section>
 
         <Section title="20. Frames without text" note="A bar chart and a checkerboard built only from frames.">
-          <Frame alignment-bottom-left fill-white flow-horizontal gap-1 height-28 padding-2 width-fill>
+          <Frame alignment-bottom-left fill-white autolayout-horizontal gap-1 height-28 padding-2 width-fill>
             <Frame corner-radius-top-left-sm corner-radius-top-right-sm fill-tertiary-300 height-4 width-fill />
             <Frame corner-radius-top-left-sm corner-radius-top-right-sm fill-tertiary-400 height-8 width-fill />
             <Frame corner-radius-top-left-sm corner-radius-top-right-sm fill-tertiary-500 height-12 width-fill />
@@ -1314,26 +1323,26 @@ export default () => {
             <Frame corner-radius-top-left-sm corner-radius-top-right-sm fill-tertiary-400 height-10 width-fill />
             <Frame corner-radius-top-left-sm corner-radius-top-right-sm fill-tertiary-300 height-6 width-fill />
           </Frame>
-          <Frame flow-vertical height-hug width-hug>
-            <Frame flow-horizontal>
+          <Frame autolayout-vertical height-hug width-hug>
+            <Frame autolayout-horizontal>
               <Frame fill-neutral-700 height-6 width-6 />
               <Frame fill-white height-6 width-6 />
               <Frame fill-neutral-700 height-6 width-6 />
               <Frame fill-white height-6 width-6 />
             </Frame>
-            <Frame flow-horizontal>
+            <Frame autolayout-horizontal>
               <Frame fill-white height-6 width-6 />
               <Frame fill-neutral-700 height-6 width-6 />
               <Frame fill-white height-6 width-6 />
               <Frame fill-neutral-700 height-6 width-6 />
             </Frame>
-            <Frame flow-horizontal>
+            <Frame autolayout-horizontal>
               <Frame fill-neutral-700 height-6 width-6 />
               <Frame fill-white height-6 width-6 />
               <Frame fill-neutral-700 height-6 width-6 />
               <Frame fill-white height-6 width-6 />
             </Frame>
-            <Frame flow-horizontal>
+            <Frame autolayout-horizontal>
               <Frame fill-white height-6 width-6 />
               <Frame fill-neutral-700 height-6 width-6 />
               <Frame fill-white height-6 width-6 />
@@ -1346,8 +1355,17 @@ export default () => {
           title="21. Wrapping card grid"
           note="Fixed 28-wide cards that wrap onto new rows as the width shrinks."
         >
-          <Frame alignment-top-left flow-horizontal gap-3 height-hug width-fill wrap>
-            <Frame corner-radius-xl effect-shadow-small fill-white flow-vertical gap-2 height-hug padding-3 width-28>
+          <Frame alignment-top-left autolayout-horizontal gap-3 height-hug width-fill wrap>
+            <Frame
+              corner-radius-xl
+              effect-shadow-small
+              fill-white
+              autolayout-vertical
+              gap-2
+              height-hug
+              padding-3
+              width-28
+            >
               <Frame corner-radius-lg fill-primary-300 height-12 width-fill />
               <Text fill-text-800 typography-label-nowrap>
                 Alpha
@@ -1356,7 +1374,16 @@ export default () => {
                 One line.
               </Text>
             </Frame>
-            <Frame corner-radius-xl effect-shadow-small fill-white flow-vertical gap-2 height-hug padding-3 width-28>
+            <Frame
+              corner-radius-xl
+              effect-shadow-small
+              fill-white
+              autolayout-vertical
+              gap-2
+              height-hug
+              padding-3
+              width-28
+            >
               <Frame corner-radius-lg fill-secondary-300 height-12 width-fill />
               <Text fill-text-800 typography-label-nowrap>
                 Beta
@@ -1365,7 +1392,16 @@ export default () => {
                 A couple of lines of text in this card.
               </Text>
             </Frame>
-            <Frame corner-radius-xl effect-shadow-small fill-white flow-vertical gap-2 height-hug padding-3 width-28>
+            <Frame
+              corner-radius-xl
+              effect-shadow-small
+              fill-white
+              autolayout-vertical
+              gap-2
+              height-hug
+              padding-3
+              width-28
+            >
               <Frame corner-radius-lg fill-tertiary-300 height-12 width-fill />
               <Text fill-text-800 typography-label-nowrap>
                 Gamma
@@ -1374,7 +1410,16 @@ export default () => {
                 Short.
               </Text>
             </Frame>
-            <Frame corner-radius-xl effect-shadow-small fill-white flow-vertical gap-2 height-hug padding-3 width-28>
+            <Frame
+              corner-radius-xl
+              effect-shadow-small
+              fill-white
+              autolayout-vertical
+              gap-2
+              height-hug
+              padding-3
+              width-28
+            >
               <Frame corner-radius-lg fill-positive-300 height-12 width-fill />
               <Text fill-text-800 typography-label-nowrap>
                 Delta
@@ -1383,7 +1428,16 @@ export default () => {
                 {LOREM}
               </Text>
             </Frame>
-            <Frame corner-radius-xl effect-shadow-small fill-white flow-vertical gap-2 height-hug padding-3 width-28>
+            <Frame
+              corner-radius-xl
+              effect-shadow-small
+              fill-white
+              autolayout-vertical
+              gap-2
+              height-hug
+              padding-3
+              width-28
+            >
               <Frame corner-radius-lg fill-negative-300 height-12 width-fill />
               <Text fill-text-800 typography-label-nowrap>
                 Epsilon
@@ -1395,7 +1449,7 @@ export default () => {
           </Frame>
         </Section>
         <Section title="22. Vector" note="A 20 x 20 icon path scaled into width- and height- boxes of 5 and 10.">
-          <Frame alignment-bottom-left flow-horizontal gap-4 height-hug width-fill wrap>
+          <Frame alignment-bottom-left autolayout-horizontal gap-4 height-hug width-fill wrap>
             <Case label="5 x 5">
               <Vector fill-text-700 height-5 path={MORE_PATH} viewBox="-3.94 -8.75 20 20" width-5 />
             </Case>
