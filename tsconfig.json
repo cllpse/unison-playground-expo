@@ -2,12 +2,11 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
-    "types": ["node"],
     "paths": {
       "@unison": ["./unison-components/dist/native"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
+  "include": ["**/*.ts", "**/*.tsx"],
   // Leave out the library's web entry and shells, and its Bun build scripts.
   "exclude": ["node_modules", "unison-components/dist/web.ts", "unison-components/src/web", "unison-components/scripts"]
 }
