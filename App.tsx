@@ -130,7 +130,7 @@ export default () => {
             Frame, Text and Vector test suite
           </Text>
           <Text fill-neutral-500 typography-sm>
-            Every value of every token in tokens.json, written out flag by flag.
+            Every value of every token in design-tokens.json, written out flag by flag.
           </Text>
         </Frame>
 
