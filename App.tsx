@@ -1060,11 +1060,6 @@ export default () => {
                 900
               </Text>
             </Frame>
-            <Frame alignment-center autolayout-vertical height-hug width-6>
-              <Text fill-neutral-500 typography-xs>
-                950
-              </Text>
-            </Frame>
           </Frame>
           <Frame autolayout-vertical gap-0p5 height-hug width-hug>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
@@ -1083,7 +1078,6 @@ export default () => {
               <Frame corner-radius-xs fill-red-700 height-6 width-6 />
               <Frame corner-radius-xs fill-red-800 height-6 width-6 />
               <Frame corner-radius-xs fill-red-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-red-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1101,7 +1095,6 @@ export default () => {
               <Frame corner-radius-xs fill-orange-700 height-6 width-6 />
               <Frame corner-radius-xs fill-orange-800 height-6 width-6 />
               <Frame corner-radius-xs fill-orange-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-orange-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1119,7 +1112,6 @@ export default () => {
               <Frame corner-radius-xs fill-amber-700 height-6 width-6 />
               <Frame corner-radius-xs fill-amber-800 height-6 width-6 />
               <Frame corner-radius-xs fill-amber-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-amber-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1137,7 +1129,6 @@ export default () => {
               <Frame corner-radius-xs fill-yellow-700 height-6 width-6 />
               <Frame corner-radius-xs fill-yellow-800 height-6 width-6 />
               <Frame corner-radius-xs fill-yellow-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-yellow-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1155,7 +1146,6 @@ export default () => {
               <Frame corner-radius-xs fill-lime-700 height-6 width-6 />
               <Frame corner-radius-xs fill-lime-800 height-6 width-6 />
               <Frame corner-radius-xs fill-lime-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-lime-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1173,7 +1163,6 @@ export default () => {
               <Frame corner-radius-xs fill-green-700 height-6 width-6 />
               <Frame corner-radius-xs fill-green-800 height-6 width-6 />
               <Frame corner-radius-xs fill-green-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-green-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1191,7 +1180,6 @@ export default () => {
               <Frame corner-radius-xs fill-emerald-700 height-6 width-6 />
               <Frame corner-radius-xs fill-emerald-800 height-6 width-6 />
               <Frame corner-radius-xs fill-emerald-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-emerald-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1209,7 +1197,6 @@ export default () => {
               <Frame corner-radius-xs fill-teal-700 height-6 width-6 />
               <Frame corner-radius-xs fill-teal-800 height-6 width-6 />
               <Frame corner-radius-xs fill-teal-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-teal-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1227,7 +1214,6 @@ export default () => {
               <Frame corner-radius-xs fill-cyan-700 height-6 width-6 />
               <Frame corner-radius-xs fill-cyan-800 height-6 width-6 />
               <Frame corner-radius-xs fill-cyan-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-cyan-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1245,7 +1231,6 @@ export default () => {
               <Frame corner-radius-xs fill-sky-700 height-6 width-6 />
               <Frame corner-radius-xs fill-sky-800 height-6 width-6 />
               <Frame corner-radius-xs fill-sky-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-sky-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1263,7 +1248,6 @@ export default () => {
               <Frame corner-radius-xs fill-blue-700 height-6 width-6 />
               <Frame corner-radius-xs fill-blue-800 height-6 width-6 />
               <Frame corner-radius-xs fill-blue-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-blue-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1281,7 +1265,6 @@ export default () => {
               <Frame corner-radius-xs fill-indigo-700 height-6 width-6 />
               <Frame corner-radius-xs fill-indigo-800 height-6 width-6 />
               <Frame corner-radius-xs fill-indigo-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-indigo-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1299,7 +1282,6 @@ export default () => {
               <Frame corner-radius-xs fill-violet-700 height-6 width-6 />
               <Frame corner-radius-xs fill-violet-800 height-6 width-6 />
               <Frame corner-radius-xs fill-violet-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-violet-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1317,7 +1299,6 @@ export default () => {
               <Frame corner-radius-xs fill-purple-700 height-6 width-6 />
               <Frame corner-radius-xs fill-purple-800 height-6 width-6 />
               <Frame corner-radius-xs fill-purple-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-purple-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1335,7 +1316,6 @@ export default () => {
               <Frame corner-radius-xs fill-fuchsia-700 height-6 width-6 />
               <Frame corner-radius-xs fill-fuchsia-800 height-6 width-6 />
               <Frame corner-radius-xs fill-fuchsia-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-fuchsia-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1353,7 +1333,6 @@ export default () => {
               <Frame corner-radius-xs fill-pink-700 height-6 width-6 />
               <Frame corner-radius-xs fill-pink-800 height-6 width-6 />
               <Frame corner-radius-xs fill-pink-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-pink-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1371,7 +1350,6 @@ export default () => {
               <Frame corner-radius-xs fill-rose-700 height-6 width-6 />
               <Frame corner-radius-xs fill-rose-800 height-6 width-6 />
               <Frame corner-radius-xs fill-rose-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-rose-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1389,7 +1367,6 @@ export default () => {
               <Frame corner-radius-xs fill-slate-700 height-6 width-6 />
               <Frame corner-radius-xs fill-slate-800 height-6 width-6 />
               <Frame corner-radius-xs fill-slate-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-slate-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1407,7 +1384,6 @@ export default () => {
               <Frame corner-radius-xs fill-gray-700 height-6 width-6 />
               <Frame corner-radius-xs fill-gray-800 height-6 width-6 />
               <Frame corner-radius-xs fill-gray-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-gray-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1425,7 +1401,6 @@ export default () => {
               <Frame corner-radius-xs fill-zinc-700 height-6 width-6 />
               <Frame corner-radius-xs fill-zinc-800 height-6 width-6 />
               <Frame corner-radius-xs fill-zinc-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-zinc-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1443,7 +1418,6 @@ export default () => {
               <Frame corner-radius-xs fill-neutral-700 height-6 width-6 />
               <Frame corner-radius-xs fill-neutral-800 height-6 width-6 />
               <Frame corner-radius-xs fill-neutral-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-neutral-950 height-6 width-6 />
             </Frame>
             <Frame alignment-left autolayout-horizontal gap-0p5 height-hug width-hug>
               <Frame height-hug width-12>
@@ -1461,7 +1435,6 @@ export default () => {
               <Frame corner-radius-xs fill-stone-700 height-6 width-6 />
               <Frame corner-radius-xs fill-stone-800 height-6 width-6 />
               <Frame corner-radius-xs fill-stone-900 height-6 width-6 />
-              <Frame corner-radius-xs fill-stone-950 height-6 width-6 />
             </Frame>
           </Frame>
           <Cases>
@@ -2290,7 +2263,7 @@ export default () => {
                         <Frame fill-emerald-700 autolayout-vertical padding-2>
                           <Frame fill-emerald-800 autolayout-horizontal padding-2>
                             <Frame fill-emerald-900 autolayout-vertical padding-2>
-                              <Frame fill-emerald-950 autolayout-horizontal padding-2>
+                              <Frame fill-emerald-900 autolayout-horizontal padding-2>
                                 <Frame fill-white autolayout-vertical padding-1>
                                   <Text fill-black typography-xs>
                                     12 deep
