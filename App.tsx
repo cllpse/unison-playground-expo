@@ -1,8 +1,6 @@
 import "./global.css"
-import { Frame, Text } from "@unison-components/native"
+import { Frame, Text, Vector } from "@unison"
 import { StatusBar } from "expo-status-bar"
-// The native entry does not export Vector yet; its base component renders with react-native-svg on every platform.
-import Vector from "./unison-components/src/base/Vector.base"
 
 export default () => {
   return (

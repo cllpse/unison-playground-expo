@@ -4,9 +4,10 @@
     "strict": true,
     "types": ["node"],
     "paths": {
-      "@unison-components/native": ["./unison-components/native"]
+      "@unison": ["./unison-components/dist/native"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
-  "exclude": ["node_modules"]
+  // Leave out the library's web entry and shells, and its Bun build scripts.
+  "exclude": ["node_modules", "unison-components/dist/web.ts", "unison-components/src/web", "unison-components/scripts"]
 }
