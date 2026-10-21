@@ -2497,6 +2497,26 @@ export default () => {
             <Vector fill-green-600 height-6 path={CHECK_PATH} viewBox="0 0 18 16" width-6 />
           </Frame>
         </Section>
+
+        <Section
+          title="19. Motion"
+          note="The animations from motion-tokens.css on a Frame: CSS on web, Reanimated on iOS and Android through unison-components/uniwind-motion."
+        >
+          <Cases>
+            <Case label="tailwind-animate-spin">
+              <Frame corner-radius-sm fill-violet-600 height-8 tailwind-animate-spin width-8 />
+            </Case>
+            <Case label="tailwind-animate-ping">
+              <Frame corner-radius-full fill-violet-600 height-8 tailwind-animate-ping width-8 />
+            </Case>
+            <Case label="tailwind-animate-pulse">
+              <Frame corner-radius-sm fill-violet-600 height-8 tailwind-animate-pulse width-8 />
+            </Case>
+            <Case label="tailwind-animate-bounce">
+              <Frame corner-radius-full fill-violet-600 height-8 tailwind-animate-bounce width-8 />
+            </Case>
+          </Cases>
+        </Section>
       </Frame>
     </ScrollView>
   )

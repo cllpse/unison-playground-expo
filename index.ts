@@ -1,3 +1,4 @@
+import "./unison-components/dist/uniwind-motion"
 import { registerRootComponent } from "expo"
 import App from "./App"
 
