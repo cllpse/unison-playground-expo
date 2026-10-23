@@ -28,7 +28,6 @@ Part of [Unison](https://github.com/cllpse/unison), alongside
 ## Getting started
 
 ```sh
-git submodule update --init
 bun install
 bun start
 ```
@@ -54,18 +53,20 @@ web and native render the same cases.
 
 ## How the components are wired in
 
-_./unison-components_ is the library as a git submodule, pinned to a commit:
+The library is the [unison-components](https://www.npmjs.com/package/unison-components) npm package:
 
-- `@unison` is a path alias in _tsconfig.json_ for _unison-components/dist/native_, which exports `Frame`, `Text` and
-  `Vector`. Metro picks the alias up; the web entry and shells are excluded from type checking.
+- `unison-components` exports `Frame`, `Text` and `Vector`. Metro and TypeScript pick the native build through the
+  `react-native` export condition.
+- _index.ts_ imports `unison-components/uniwind-motion` before the first render, so transitions and animations run
+  through Reanimated.
 - [Uniwind](https://uniwind.dev) compiles the library's Tailwind class names to React Native styles. _global.css_ is its
-  entry, wired up in _metro.config.js_, and imports the library's _dist/tailwind.css_, which carries the design tokens
-  as Tailwind theme values. It is generated and committed in the library, so there is no build step here. Don't edit
+  entry, wired up in _metro.config.js_, and imports `unison-components/tailwind.css`, which carries the design tokens
+  as Tailwind theme values. It ships prebuilt in the package, so there is no build step here. Don't edit
   _uniwind-types.d.ts_ (written by Metro) by hand.
 
 ```tsx
 import "./global.css"
-import { Frame, Text } from "@unison"
+import { Frame, Text } from "unison-components"
 
 export default () => {
   return (
@@ -78,9 +79,6 @@ export default () => {
 
 ### Updating the library
 
-Move the pinned commit to pick up library changes:
-
-```sh
-git -C unison-components pull origin main
-git add unison-components
-```
+Pick up a new release with `bun update unison-components`. While working on the library,
+`bun run components:sync-watch:playground-expo` in the parent [unison](https://github.com/cllpse/unison) repository
+builds it and copies it over the installed package as you edit; `bun install` puts the published package back.

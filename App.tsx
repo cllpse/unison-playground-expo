@@ -1,9 +1,9 @@
 import "./global.css"
 
-import { Frame, Text, Vector } from "@unison"
 import { StatusBar } from "expo-status-bar"
 import type { ReactNode } from "react"
 import { ScrollView } from "react-native"
+import { Frame, Text, Vector } from "unison-components"
 
 // Keep these sections in step with unison-playground-web/src/app/page.tsx so web and native render the same cases.
 
