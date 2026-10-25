@@ -30,6 +30,9 @@ const PANGRAM = "Sphinx of black quartz, judge my vow."
 // A single word with no break opportunities, to show where text has to break mid-word.
 const UNBROKEN = "Supercalifragilisticexpialidocious-and-then-some-more-without-any-spaces"
 
+// A Frame takes focus, and on iOS and Android presses, only with a press handler; the state cases need one.
+const doNothing = () => {}
+
 const Section = (p: { title: string; note: string; children?: ReactNode }) => {
   return (
     <Frame autolayout-vertical gap-2 height-hug width-fill>
@@ -1756,7 +1759,7 @@ export default () => {
 
         <Section
           title="11. Hover"
-          note="Hover each box on web: fill-hover- swaps the fill, stroke-hover- the stroke, and a tailwind-group frame recolors its text. Native ignores hover."
+          note="Hover each box on web: fill-hover- swaps the fill, stroke-hover- the stroke, and a group frame recolors its text. Native ignores hover."
         >
           <Cases>
             <Case label="hover red-500">
@@ -1811,9 +1814,9 @@ export default () => {
                 Hover this text
               </Text>
             </Case>
-            <Case label="tailwind-group">
-              <Frame corner-radius-lg fill-hover-neutral-900 fill-white padding-3 tailwind-group>
-                <Text fill-hover-white fill-neutral-900 tailwind-group-hover-fill typography-sm>
+            <Case label="group-hover-fill-white">
+              <Frame corner-radius-lg fill-hover-neutral-900 fill-white group padding-3>
+                <Text fill-neutral-900 group-hover-fill-white typography-sm>
                   Hover the frame
                 </Text>
               </Frame>
@@ -2519,7 +2522,7 @@ export default () => {
               {LOREM}
             </Text>
           </Frame>
-          <Caption>An underlined word inside a sentence, and an underlined label in a tailwind-group button</Caption>
+          <Caption>An underlined word inside a sentence, and an underlined label in a group button</Caption>
           <Frame alignment-left autolayout-horizontal gap-1 height-hug width-fill wrap>
             <Text fill-black typography-sm>
               Read the
@@ -2531,21 +2534,8 @@ export default () => {
               before adding a flag.
             </Text>
           </Frame>
-          <Frame
-            corner-radius-md
-            fill-hover-violet-700
-            fill-violet-100
-            padding-horizontal-3
-            padding-vertical-2
-            tailwind-group
-          >
-            <Text
-              fill-hover-white
-              fill-violet-900
-              tailwind-group-hover-fill
-              typography-decoration-underline
-              typography-sm
-            >
+          <Frame corner-radius-md fill-hover-violet-700 fill-violet-100 group padding-horizontal-3 padding-vertical-2>
+            <Text fill-violet-900 group-hover-fill-white typography-decoration-underline typography-sm>
               Hover the button
             </Text>
           </Frame>
@@ -2844,13 +2834,13 @@ export default () => {
                 corner-radius-full
                 fill-hover-neutral-900
                 fill-neutral-100
+                group
                 padding-horizontal-4
                 padding-vertical-2
-                tailwind-group
                 transition-colors
                 transition-duration-300
               >
-                <Text fill-hover-white fill-neutral-900 tailwind-group-hover-fill typography-sm>
+                <Text fill-neutral-900 group-hover-fill-white typography-sm>
                   Hover me
                 </Text>
               </Frame>
@@ -2900,8 +2890,8 @@ export default () => {
               </Frame>
             </Case>
             <Case label="none on a group">
-              <Frame corner-radius-lg fill-hover-neutral-900 fill-white padding-3 pointer-events-none tailwind-group>
-                <Text fill-hover-white fill-neutral-900 tailwind-group-hover-fill typography-sm>
+              <Frame corner-radius-lg fill-hover-neutral-900 fill-white group padding-3 pointer-events-none>
+                <Text fill-neutral-900 group-hover-fill-white typography-sm>
                   No hover
                 </Text>
               </Frame>
@@ -3003,6 +2993,262 @@ export default () => {
               {PANGRAM}
             </Text>
           </Frame>
+        </Section>
+
+        <Section
+          title="24. States"
+          note="Click, then Tab to, each box: fill-active- shows while it is pressed, fill-focus- and stroke-focus- while it has any focus, and fill-focus-visible- and stroke-focus-visible- only while it has keyboard focus. A Frame takes focus, and on iOS and Android presses, only with a press handler, so these have one that does nothing. On iOS and Android both focus states are any focus, which comes from a keyboard or a TV remote."
+        >
+          <Cases>
+            <Case label="fill-active-">
+              <Frame corner-radius-lg fill-active-blue-700 fill-blue-400 height-12 onPress={doNothing} width-12 />
+            </Case>
+            <Case label="fill-focus-">
+              <Frame corner-radius-lg fill-focus-amber-500 fill-neutral-200 height-12 onPress={doNothing} width-12 />
+            </Case>
+            <Case label="fill-focus-visible-">
+              <Frame
+                corner-radius-lg
+                fill-focus-visible-violet-500
+                fill-neutral-200
+                height-12
+                onPress={doNothing}
+                width-12
+              />
+            </Case>
+            <Case label="both: click amber, Tab violet">
+              <Frame
+                corner-radius-lg
+                fill-focus-amber-500
+                fill-focus-visible-violet-500
+                fill-neutral-200
+                height-12
+                onPress={doNothing}
+                width-12
+              />
+            </Case>
+            <Case label="stroke-focus-">
+              <Frame
+                corner-radius-lg
+                fill-white
+                height-12
+                onPress={doNothing}
+                stroke-focus-amber-500
+                stroke-neutral-300
+                width-12
+              />
+            </Case>
+            <Case label="stroke-focus-visible-">
+              <Frame
+                corner-radius-lg
+                fill-white
+                height-12
+                onPress={doNothing}
+                stroke-focus-visible-violet-500
+                stroke-neutral-300
+                width-12
+              />
+            </Case>
+            <Case label="no press handler">
+              <Frame corner-radius-lg fill-active-blue-700 fill-focus-amber-500 fill-neutral-200 height-12 width-12 />
+            </Case>
+          </Cases>
+          <Caption>
+            fill-disabled- follows disabled, which also stops presses and wins over hover and press, and fill-selected-
+            follows aria-selected
+          </Caption>
+          <Cases>
+            <Case label="enabled">
+              <Frame
+                alignment-center
+                corner-radius-md
+                fill-active-blue-800
+                fill-blue-600
+                fill-disabled-neutral-300
+                fill-hover-blue-700
+                height-10
+                onPress={doNothing}
+                padding-horizontal-4
+              >
+                <Text fill-white typography-sm>
+                  Buy
+                </Text>
+              </Frame>
+            </Case>
+            <Case label="disabled">
+              <Frame
+                alignment-center
+                corner-radius-md
+                disabled
+                fill-active-blue-800
+                fill-blue-600
+                fill-disabled-neutral-300
+                fill-hover-blue-700
+                height-10
+                onPress={doNothing}
+                padding-horizontal-4
+              >
+                <Text fill-white typography-sm>
+                  Buy
+                </Text>
+              </Frame>
+            </Case>
+            <Case label="aria-selected on Week">
+              <Frame autolayout-horizontal corner-radius-full fill-neutral-200 gap-1 padding-1>
+                <Frame
+                  corner-radius-full
+                  fill-hover-neutral-300
+                  fill-neutral-200
+                  fill-selected-white
+                  onPress={doNothing}
+                  padding-horizontal-3
+                  padding-vertical-1
+                >
+                  <Text fill-neutral-900 typography-sm>
+                    Day
+                  </Text>
+                </Frame>
+                <Frame
+                  aria-selected
+                  corner-radius-full
+                  fill-hover-neutral-300
+                  fill-neutral-200
+                  fill-selected-white
+                  onPress={doNothing}
+                  padding-horizontal-3
+                  padding-vertical-1
+                >
+                  <Text fill-neutral-900 typography-sm>
+                    Week
+                  </Text>
+                </Frame>
+                <Frame
+                  corner-radius-full
+                  fill-hover-neutral-300
+                  fill-neutral-200
+                  fill-selected-white
+                  onPress={doNothing}
+                  padding-horizontal-3
+                  padding-vertical-1
+                >
+                  <Text fill-neutral-900 typography-sm>
+                    Month
+                  </Text>
+                </Frame>
+              </Frame>
+            </Case>
+          </Cases>
+        </Section>
+
+        <Section
+          title="25. Group states"
+          note="A group frame's descendants take group-<state>- flags, which apply while that frame is in the state: hover, press, click and Tab to each group. On iOS and Android group states need Uniwind Pro, and there only group-active-, group-focus- and group-focus-visible- apply, so without it this section stays in its resting state."
+        >
+          <Cases>
+            <Case label="group-hover-fill- on Text and Vector">
+              <Frame
+                alignment-left
+                autolayout-horizontal
+                corner-radius-lg
+                fill-hover-neutral-200
+                fill-white
+                gap-3
+                group
+                onPress={doNothing}
+                padding-3
+              >
+                <Text fill-neutral-900 group-hover-fill-blue-600 typography-sm>
+                  Settings
+                </Text>
+                <Vector
+                  fill-neutral-400
+                  group-hover-fill-blue-600
+                  height-4
+                  path={CHECK_PATH}
+                  viewBox="0 0 18 16"
+                  width-4
+                />
+              </Frame>
+            </Case>
+            <Case label="group-active-fill-">
+              <Frame autolayout-vertical corner-radius-lg fill-white gap-2 group onPress={doNothing} padding-3 width-40>
+                <Frame corner-radius-md fill-neutral-200 group-active-fill-neutral-400 height-16 width-fill />
+                <Text fill-neutral-600 group-active-fill-neutral-900 typography-sm>
+                  Press the card
+                </Text>
+              </Frame>
+            </Case>
+            <Case label="group-focus-fill-">
+              <Frame
+                alignment-left
+                autolayout-horizontal
+                corner-radius-md
+                fill-white
+                gap-2
+                group
+                onPress={doNothing}
+                padding-2
+                stroke-focus-blue-500
+                stroke-neutral-300
+                width-48
+              >
+                <Vector
+                  fill-neutral-400
+                  fillRule="evenodd"
+                  group-focus-fill-blue-500
+                  height-4
+                  path={RING_PATH}
+                  viewBox="0 0 24 24"
+                  width-4
+                />
+                <Text fill-neutral-500 group-focus-fill-neutral-900 typography-sm>
+                  Search
+                </Text>
+              </Frame>
+            </Case>
+            <Case label="group-focus-visible-fill-">
+              <Frame autolayout-vertical fill-white gap-1 group onPress={doNothing} padding-2 width-hug>
+                <Text fill-neutral-600 group-focus-fill-neutral-900 group-focus-visible-fill-blue-600 typography-sm>
+                  Overview
+                </Text>
+                <Frame fill-transparent group-focus-visible-fill-blue-500 height-0p5 width-fill />
+              </Frame>
+            </Case>
+            <Case label="group-hover-stroke-">
+              <Frame
+                alignment-left
+                autolayout-horizontal
+                corner-radius-lg
+                fill-white
+                gap-3
+                group
+                onPress={doNothing}
+                padding-3
+              >
+                <Frame
+                  corner-radius-full
+                  fill-violet-200
+                  group-hover-stroke-violet-600
+                  height-8
+                  stroke-transparent
+                  width-8
+                />
+                <Text fill-neutral-900 typography-sm>
+                  Ada Lovelace
+                </Text>
+              </Frame>
+            </Case>
+          </Cases>
+          <Caption>An element's own state wins over its group's: hover the frame, then the text</Caption>
+          <Cases>
+            <Case label="fill-hover- over group-hover-fill-">
+              <Frame corner-radius-lg fill-hover-neutral-900 fill-white group padding-3>
+                <Text fill-hover-amber-300 fill-neutral-900 group-hover-fill-white typography-sm>
+                  Hover me last
+                </Text>
+              </Frame>
+            </Case>
+          </Cases>
         </Section>
       </Frame>
     </ScrollView>
