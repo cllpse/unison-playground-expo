@@ -667,245 +667,245 @@ export default () => {
         <Section title="6. Gap scale" note="Three 4 x 4 boxes in a row with every gap step.">
           <Cases>
             <Case label="0">
-              <Frame autolayout-horizontal gap-0 height-hug width-hug>
+              <Frame autolayout-horizontal gap-0 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="px">
-              <Frame autolayout-horizontal gap-px height-hug width-hug>
+              <Frame autolayout-horizontal gap-px height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="0p5">
-              <Frame autolayout-horizontal gap-0p5 height-hug width-hug>
+              <Frame autolayout-horizontal gap-0p5 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="1">
-              <Frame autolayout-horizontal gap-1 height-hug width-hug>
+              <Frame autolayout-horizontal gap-1 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="1p5">
-              <Frame autolayout-horizontal gap-1p5 height-hug width-hug>
+              <Frame autolayout-horizontal gap-1p5 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="2">
-              <Frame autolayout-horizontal gap-2 height-hug width-hug>
+              <Frame autolayout-horizontal gap-2 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="2p5">
-              <Frame autolayout-horizontal gap-2p5 height-hug width-hug>
+              <Frame autolayout-horizontal gap-2p5 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="3">
-              <Frame autolayout-horizontal gap-3 height-hug width-hug>
+              <Frame autolayout-horizontal gap-3 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="3p5">
-              <Frame autolayout-horizontal gap-3p5 height-hug width-hug>
+              <Frame autolayout-horizontal gap-3p5 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="4">
-              <Frame autolayout-horizontal gap-4 height-hug width-hug>
+              <Frame autolayout-horizontal gap-4 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="5">
-              <Frame autolayout-horizontal gap-5 height-hug width-hug>
+              <Frame autolayout-horizontal gap-5 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="6">
-              <Frame autolayout-horizontal gap-6 height-hug width-hug>
+              <Frame autolayout-horizontal gap-6 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="7">
-              <Frame autolayout-horizontal gap-7 height-hug width-hug>
+              <Frame autolayout-horizontal gap-7 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="8">
-              <Frame autolayout-horizontal gap-8 height-hug width-hug>
+              <Frame autolayout-horizontal gap-8 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="9">
-              <Frame autolayout-horizontal gap-9 height-hug width-hug>
+              <Frame autolayout-horizontal gap-9 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="10">
-              <Frame autolayout-horizontal gap-10 height-hug width-hug>
+              <Frame autolayout-horizontal gap-10 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="11">
-              <Frame autolayout-horizontal gap-11 height-hug width-hug>
+              <Frame autolayout-horizontal gap-11 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="12">
-              <Frame autolayout-horizontal gap-12 height-hug width-hug>
+              <Frame autolayout-horizontal gap-12 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="14">
-              <Frame autolayout-horizontal gap-14 height-hug width-hug>
+              <Frame autolayout-horizontal gap-14 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="16">
-              <Frame autolayout-horizontal gap-16 height-hug width-hug>
+              <Frame autolayout-horizontal gap-16 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="20">
-              <Frame autolayout-horizontal gap-20 height-hug width-hug>
+              <Frame autolayout-horizontal gap-20 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="24">
-              <Frame autolayout-horizontal gap-24 height-hug width-hug>
+              <Frame autolayout-horizontal gap-24 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="28">
-              <Frame autolayout-horizontal gap-28 height-hug width-hug>
+              <Frame autolayout-horizontal gap-28 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="32">
-              <Frame autolayout-horizontal gap-32 height-hug width-hug>
+              <Frame autolayout-horizontal gap-32 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="36">
-              <Frame autolayout-horizontal gap-36 height-hug width-hug>
+              <Frame autolayout-horizontal gap-36 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="40">
-              <Frame autolayout-horizontal gap-40 height-hug width-hug>
+              <Frame autolayout-horizontal gap-40 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="44">
-              <Frame autolayout-horizontal gap-44 height-hug width-hug>
+              <Frame autolayout-horizontal gap-44 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="48">
-              <Frame autolayout-horizontal gap-48 height-hug width-hug>
+              <Frame autolayout-horizontal gap-48 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="52">
-              <Frame autolayout-horizontal gap-52 height-hug width-hug>
+              <Frame autolayout-horizontal gap-52 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="56">
-              <Frame autolayout-horizontal gap-56 height-hug width-hug>
+              <Frame autolayout-horizontal gap-56 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="60">
-              <Frame autolayout-horizontal gap-60 height-hug width-hug>
+              <Frame autolayout-horizontal gap-60 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="64">
-              <Frame autolayout-horizontal gap-64 height-hug width-hug>
+              <Frame autolayout-horizontal gap-64 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="72">
-              <Frame autolayout-horizontal gap-72 height-hug width-hug>
+              <Frame autolayout-horizontal gap-72 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="80">
-              <Frame autolayout-horizontal gap-80 height-hug width-hug>
+              <Frame autolayout-horizontal gap-80 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
               </Frame>
             </Case>
             <Case label="96">
-              <Frame autolayout-horizontal gap-96 height-hug width-hug>
+              <Frame autolayout-horizontal gap-96 height-hug width-hug wrap>
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
                 <Frame fill-rose-500 height-4 width-4 />
