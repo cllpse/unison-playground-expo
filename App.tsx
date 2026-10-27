@@ -2338,7 +2338,7 @@ export default () => {
 
         <Section
           title="18. Vectors"
-          note="Paths scaled into width- and height- boxes. The viewBox keeps its aspect ratio, so a path centers in a box of another shape."
+          note="Paths in width- and height- boxes, or stretched to their container. The viewBox keeps its aspect ratio, so a path centers in a box of another shape."
         >
           <Caption>The dots icon at 3, 4, 6, 8, 12, 16 and 24, in neutral-900</Caption>
           <Cases>
@@ -2426,6 +2426,61 @@ export default () => {
               </Frame>
             </Case>
           </Cases>
+          <Caption>
+            Without size flags a vector stretches to its container and keeps its aspect ratio; with one flag the other
+            side follows it
+          </Caption>
+          <Cases>
+            <Case label="in 10 x 10">
+              <Frame fill-neutral-200 height-10 width-10>
+                <Vector fill-blue-600 path={CHECK_PATH} viewBox="0 0 18 16" />
+              </Frame>
+            </Case>
+            <Case label="in a 24 x 10 row">
+              <Frame autolayout-horizontal fill-neutral-200 height-10 width-24>
+                <Vector fill-blue-600 path={CHECK_PATH} viewBox="0 0 18 16" />
+              </Frame>
+            </Case>
+            <Case label="in a 10 x 24 column">
+              <Frame autolayout-vertical fill-neutral-200 height-24 width-10>
+                <Vector fill-blue-600 path={MORE_PATH} viewBox="0 0 12.12 2.5" />
+              </Frame>
+            </Case>
+            <Case label="centered in 16 x 16">
+              <Frame alignment-center fill-neutral-200 height-16 width-16>
+                <Vector fill-blue-600 path={MORE_PATH} viewBox="0 0 12.12 2.5" />
+              </Frame>
+            </Case>
+            <Case label="width-16 only">
+              <Frame stroke-neutral-400 width-hug>
+                <Vector fill-blue-600 path={CHECK_PATH} viewBox="0 0 18 16" width-16 />
+              </Frame>
+            </Case>
+            <Case label="height-16 only">
+              <Frame stroke-neutral-400 width-hug>
+                <Vector fill-blue-600 height-16 path={CHECK_PATH} viewBox="0 0 18 16" />
+              </Frame>
+            </Case>
+            <Case label="width-16 only, in a row">
+              <Frame autolayout-horizontal fill-neutral-200 height-12 width-hug>
+                <Vector fill-blue-600 path={CHECK_PATH} viewBox="0 0 18 16" width-16 />
+              </Frame>
+            </Case>
+          </Cases>
+          <Caption>
+            A fill-width column with no size flags: the dots span its width and the ring, hug-height, follows
+          </Caption>
+          <Frame autolayout-vertical fill-neutral-200 gap-2 height-hug padding-2 width-fill>
+            <Vector fill-neutral-900 path={MORE_PATH} viewBox="0 0 12.12 2.5" />
+            <Frame autolayout-horizontal gap-2 height-hug width-fill>
+              <Frame autolayout-vertical height-hug width-fill>
+                <Vector fill-rose-500 fillRule="evenodd" path={RING_PATH} viewBox="0 0 24 24" />
+              </Frame>
+              <Frame autolayout-vertical height-hug width-fill>
+                <Vector fill-blue-600 path={CHECK_PATH} viewBox="0 0 18 16" />
+              </Frame>
+            </Frame>
+          </Frame>
           <Caption>The ring with fillRule nonzero (solid) and evenodd (hole), white and black, and no fill</Caption>
           <Cases>
             <Case label="nonzero">
